@@ -1,0 +1,20 @@
+{
+  "name": "todomvc",
+  "version": "1.0.0",
+  "description": "basic todo app",
+  "main": " ",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

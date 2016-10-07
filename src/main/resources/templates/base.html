@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" th:href="@{node_modules/bootstrap/dist/css/bootstrap.min.css}"/>
+</head>
+<body>
+
+<nav class="navbar navbar-light bg-faded">
+    <a th:href="@{/}" class="navbar-brand">Todomvc</a>
+</nav>
+<div class="container-fluid">
+    <hr>
+    <div class="container">
+        <form action="#" th:action="@{/new}" th:object="${todo}" method="post">
+            <div class="form-group">
+                <label for="todo">Enter Todo</label>
+                <input id="todo" type="text" th:field="*{todo}" class="form-control">
+            </div>
+        </form>
+    </div>
+    <hr>
+    <div class="container">
+       <div class="row">
+           <div th:if="${todos == null}">
+               No todos here
+           </div>
+           <div th:unless="${todos == null}">
+               <div th:each="t : ${todos}">
+                   <div class="col-md-10" th:text="${t.todo}"></div>
+                   <div class="col-md-2"><a th:href="@{/remove/} + ${t.id}" class="btn btn-sm btn-primary">Delete me</a></div>
+               </div>
+           </div>
+       </div>
+    </div>
+</div>
+<script th:src="@{node_modules/jquery/dist/jquery.min.js}"></script>
+<script th:src="@{node_modules/tether/dist/js/tether.min.js}"></script>
+<script th:src="@{node_modules/bootstrap/dist/js/bootstrap.min.js}"></script>
+</body>
+</html>
